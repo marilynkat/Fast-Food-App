@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <title>Random Selection</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  
+  <body>
+    <h1>Random Selection</h1>
+    <p>
+      <a href="https://www.freecodecamp.org/contribute/">The freeCodeCamp Contribution Page</a> shows you how and where you can contribute to freeCodeCamp's community and growth.
+    </p>
+
+    <!-- Drop down list-->
+    <label for="distance">Optional Filters:</label>
+    <select name="distance" id="distance">
+        <option value="">Distance</option>
+        <option value="">1-3 Miles</option>
+        <option value="">3-5 Miles</option>
+        <option value="mercedes">5-7 Miles</option>
+        <option value="audi">7-10 Miles</option>
+        <option value="audi">10 Miles+</option>
+     </select>
+
+     <select name="rating" id="rating">
+         <option value="1">Rating Range</option>
+         <option value="2">4.5 - 5 stars</option>
+         <option value="3">4 - 4.5 stars</option>
+         <option value="4">3.5 - 4 stars</option>
+         <option value="5">3 - 3.5 stars</option>
+         <option value="6">3 stars or less</option>
+      </select>
+  
+    <!-- Buttons -->
+    <button id="findButton" type="button">Find Restaurant</button>
+
+    <script>
+        const successCallback = (position) => 
+        {
+            console.log("above");
+            console.log("Latitude: " + position.coords.latitude);
+            console.log("Longitude: " + position.coords.longitude);
+            console.log("below");
+        };
+
+        const errorCallback = (error) => 
+        {
+            console.log(error);
+        };
+
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+        console.log("Helloo");
+    </script>
+
+  </body>
+</html>
